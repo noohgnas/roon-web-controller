@@ -23,7 +23,8 @@
     <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/site.css">
-    <script src="/jquery/jquery.min.js"></script>
+    <script src="/jquery/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="/js/jquery.touchSwipe.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/index.js"></script>
 
@@ -55,7 +56,40 @@
             border: none;
             border-radius: 0 0 0 10px;
         }
+        #swipeArea {
+            z-index: 1001;
+            top: 54px;
+        }
     </style>
+    <script>
+        $(function () {
+            $("#swipeArea").swipe({
+                //Generic swipe handler for all directions
+                swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                    console.log("index direction: " + direction);
+                    if (direction == 'down') {
+                        console.log("index libraryBrowser show");
+                        $("#libraryBrowser").slideDown("fast", function () {
+                            // Animation complete.
+                        });
+                    } else if (direction == 'up') {
+                        console.log("index libraryBrowser hide");
+                        $("#libraryBrowser").slideUp("fast", function () {
+                            // Animation complete.
+                        });
+                    } else if (direction == 'left') {
+
+                    } else if (direction == 'right') {
+
+                    }
+                },
+                threshold: 0
+            });
+
+            //Set some options later
+            // $("#containerCoverImage").swipe({ fingers: 2 });
+        });
+    </script>
 </head>
 <body>
     <div id="nowPlaying" class="fullscreenFlex">
@@ -74,15 +108,16 @@
         <div class="overlayBackground" onclick="$('#overlayMainMenu').hide()"></div>
         <div class="overlayContent">
             <div class="overlayList">
-                <button type="button" class="buttonOverlay" onclick="showSection('nowPlaying')">Now Playing</button>
+                <button type="button" class="buttonOverlay" onclick="showSection('nowPlaying');$('#swipeArea').show();">Now Playing</button>
                 <button type="button" class="buttonOverlay" onclick="showSection('libraryBrowser')">Library</button>
             </div>
         </div>
     </div>
 
-    <button type="button" id="buttonMenu" class="buttonTrans" onclick="$('#overlayMainMenu').show()"></button>
+    <button type="button" id="buttonMenu" class="buttonTrans" onclick="$('#overlayMainMenu').show();$('#swipeArea').hide();"></button>
 
     <div id="pageLoading" class="fullscreenFlex">&nbsp;</div>
+    <div id="swipeArea" class="fullscreenFlex">&nbsp;</div>
 
 </body>
 </html>
