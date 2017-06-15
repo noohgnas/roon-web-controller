@@ -436,7 +436,7 @@ function volumeInput(spanId, value, output_id) {
 
     msg = JSON.parse('{"output_id": "' + output_id + '", "volume": "' + value + '" }');
     socket.emit("changeVolume", msg);
-
+    changeVolumeIcon(value);
 }
 
 function volumeChange(id, value, output_id) {
