@@ -124,11 +124,11 @@ function changeVolumeIcon(value) {
     var volumeIcon = '';
     if (value < 1) {
         volumeIcon = '-mute';
-    } else if (value > 0 && value < 10) {
+    } else if (value > 0 && value <= 24) {
         volumeIcon = '-low';
-    } else if (value > 10 && value < 60) {
+    } else if (value > 24 && value < 49) {
         volumeIcon = '-medium';
-    } else if (value > 70) {
+    } else if (value > 50) {
         volumeIcon = '-high';
     }
     $("#buttonVolume").html(getSVG('volume' + volumeIcon));
