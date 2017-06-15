@@ -41,6 +41,10 @@
     filter: drop-shadow(5px 5px 5px black);
 }
 
+.textSize30px {
+    font-size: 30px;
+}
+
 .textBold {
     font-weight: bold;
 }
@@ -207,7 +211,7 @@
 }
 
 #containerZoneList {
-    height: 10%;
+    height: 20%;
     display:flex;
     justify-content: center;
     align-items: center;
