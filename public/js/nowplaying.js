@@ -120,6 +120,20 @@ function showNotPlaying() {
 
 }
 
+function changeVolumeIcon(value) {
+    var volumeIcon = '';
+    if (value < 1) {
+        volumeIcon = '-mute';
+    } else if (value > 0 && value < 10) {
+        volumeIcon = '-low';
+    } else if (value > 10 && value < 60) {
+        volumeIcon = '-medium';
+    } else if (value > 70) {
+        volumeIcon = '-high';
+    }
+    $("#buttonVolume").html(getSVG('volume' + volumeIcon));
+}
+
 function showIsPlaying(curZone) {
     $("#notPlaying").hide();
     $("#isPlaying").show();
@@ -385,6 +399,7 @@ function showIsPlaying(curZone) {
                 .append("<p class=\"overlayListLabel\">" + curZone.outputs[x].display_name + "</p>")
                 .append("<span class=\"sliderGroup\"><p>Fixed Volume</p></span>")
             }
+            changeVolumeIcon(curZone.outputs[x].volume.value);
         }
     }
 
@@ -531,6 +546,12 @@ function getSVG(cmd) {
         return "<svg viewBox=\"0 0 24.00 24.00\"><path d=\"M 18,18L 6,18L 5.99988,6.00011L 18,5.99999L 18,18 Z \"/></svg>";
     } else if (cmd == "volume") {
         return "<svg viewBox=\"0 0 24.00 24.00\"><path d=\"M 3,9.00002L 6.99998,9.00004L 12,4.00002L 12,20L 6.99998,15L 2.99998,15L 3,9.00002 Z M 20.9999,12.0001C 20.9999,16.2832 18.008,19.8676 14,20.777L 14,18.7102C 16.8914,17.8496 18.9999,15.1711 18.9999,12.0001C 18.9999,8.8291 16.8914,6.15058 14,5.29L 14,3.22307C 18.008,4.13255 20.9999,7.71688 20.9999,12.0001 Z M 17,12C 17,14.0503 15.7659,15.8124 14,16.584L 14,7.41605C 15.7659,8.1876 17,9.94968 17,12 Z \"/></svg>";
+    } else if (cmd == "volume-low") {
+        return "<svg viewBox=\"0 0 24.00 24.00\"><path d=\"M7,9V15H11L16,20V4L11,9H7Z \"/></svg>";
+    } else if (cmd == "volume-medium") {
+        return "<svg viewBox=\"0 0 24.00 24.00\"><path d=\"M5,9V15H9L14,20V4L9,9M18.5,12C18.5,10.23 17.5,8.71 16,7.97V16C17.5,15.29 18.5,13.76 18.5,12Z \"/></svg>";
+    } else if (cmd == "volume-high") {
+        return "<svg viewBox=\"0 0 24.00 24.00\"><path d=\"M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z \"/></svg>";
     } else if (cmd == "volume-mute") {
         return "<svg viewBox=\"0 0 24.00 24.00\"><path d=\"M 3,9.00002L 6.99998,9.00004L 12,4.00002L 12,20L 6.99998,15L 2.99998,15L 3,9.00002 Z M 16.5858,12L 14,9.41422L 15.4142,8L 18,10.5858L 20.5858,8L 22,9.41421L 19.4142,12L 22,14.5858L 20.5858,16L 18,13.4142L 15.4142,16L 14,14.5858L 16.5858,12 Z \"/></svg>";
     } else if (cmd == "volume-minus") {
