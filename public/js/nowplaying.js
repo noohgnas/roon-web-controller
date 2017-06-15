@@ -194,8 +194,8 @@ function showIsPlaying(curZone) {
     if ( state.image_key != curZone.now_playing.image_key || state.image_key === null) {
         state.image_key = curZone.now_playing.image_key;
 
-        if ( curZone.now_playing.image_key === null ) {
-            state.imgUrl = "/img/transparent.png";
+        if (curZone.now_playing.image_key === undefined) {
+            state.imgUrl = "/img/eighth_note.png";
         } else {
             state.imgUrl = "/roonapi/getImage?image_key=" + curZone.now_playing.image_key;
         }
