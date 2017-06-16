@@ -24,18 +24,18 @@ function showPage() {
     settings.theme = readCookie('settings[\'theme\']');
 
     // Set page fields to settings
-    if (settings.zoneID === null) {
+    if (settings.zoneID === undefined) {
         $("#overlayZoneList").show();
     }
 
-    if (settings.displayName !== null){
+    if (settings.displayName !== undefined){
         $(".buttonZoneName").html(settings.displayName);
     }
 
-    if (settings.theme === null) {
-        settings.theme = "dark";
+    if (settings.theme === undefined) {
+        settings.theme = "cover";
         setCookie('settings[\'theme\']', settings.theme);
-    };
+    }
 
     setTheme(settings.theme);
 
@@ -469,10 +469,8 @@ function setTheme(theme) {
         $("#coverBackground").hide();
         $("#colorBackground").show();
     }
-    else {
-        settings.theme = null;
-        setTheme(settings.theme);
-    }
+
+    showTheme(theme);
 
     socket.emit("getZone", true);
 }
@@ -484,6 +482,7 @@ function showTheme(theme) {
     $(".buttonAvailable").css("color", css.foregroundColor);
     $(".buttonInactive").css("color", css.foregroundColor);
     $("#trackSeek").css("background-color", css.trackSeek);
+    $("#controlPrev, #controlPlayPauseStop, #controlNext").css("color", css.foregroundColor);
     socket.emit("getZone", true);
 }
 
