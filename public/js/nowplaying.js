@@ -191,7 +191,7 @@ function showIsPlaying(curZone) {
         $("#trackSeekValue").css("width", "0%");
     }
 
-    if ( state.image_key != curZone.now_playing.image_key || state.image_key === null) {
+    if ( state.image_key != curZone.now_playing.image_key || state.image_key === undefined) {
         state.image_key = curZone.now_playing.image_key;
 
         if (curZone.now_playing.image_key === undefined) {
