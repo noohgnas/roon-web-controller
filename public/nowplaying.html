@@ -24,6 +24,7 @@
     <link rel="icon" href="/favicons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/site.css">
     <link rel="stylesheet" type="text/css" href="/css/nowplaying.css">
+    <link rel="stylesheet" type="text/css" href="/css/equalizer.css">
     <script src="/jquery/jquery.min.js"></script>
     <script src="/js/jquery.simplemarquee.js"></script>
     <script src="/js/color-thief.js"></script>
@@ -61,10 +62,22 @@
             <button type="button" id="controlPlayPauseStop" class="buttonLarge"></button>
             <button type="button" id="controlNext" class="buttonMedium"></button>
         </div>
-        <div id="containerTrackSeek">
-            <div id="trackSeek">
-                <div id="trackSeekValue">
-                    <span id="seekPosition" class="left">&nbsp;</span> <span id="seekLength" class="right">&nbsp;</span>
+        <div id="containerTrack">
+            <div id="containerTrackBar">
+                <div class="bar-c">
+                    <div id="bar-1" class="bar"></div>
+                    <div id="bar-2" class="bar"></div>
+                    <div id="bar-3" class="bar"></div>
+                    <div id="bar-4" class="bar"></div>
+                    <div id="bar-5" class="bar"></div>
+                    <div id="bar-6" class="bar"></div>
+                </div>
+            </div>
+            <div id="containerTrackSeek">
+                <div id="trackSeek">
+                    <div id="trackSeekValue">
+                        <span id="seekPosition" class="left">&nbsp;</span> <span id="seekLength" class="right">&nbsp;</span>
+                    </div>
                 </div>
             </div>
         </div>

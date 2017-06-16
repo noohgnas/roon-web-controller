@@ -283,24 +283,32 @@ function showIsPlaying(curZone) {
             .html(getSVG('play'))
             .addClass("buttonAvailable")
             .removeClass("buttonInactive");
+
+            $(".bar").addClass("noAnim");
         } else if (state.PlayPauseStop == "showPause") {
             $("#controlPlayPauseStop")
             .attr("onclick", "goCmd(\'pause\', \'" + curZone.zone_id + "\')")
             .html(getSVG('pause'))
             .addClass("buttonAvailable")
             .removeClass("buttonInactive");
+
+            $(".bar").removeClass("noAnim");
         } else if (state.PlayPauseStop == "showStop") {
             $("#controlPlayPauseStop")
             .attr("onclick", "goCmd(\'pause\', \'" + curZone.zone_id + "\')")
             .html(getSVG('stop'))
             .addClass("buttonAvailable")
             .removeClass("buttonInactive");
+
+            $(".bar").removeClass("noAnim");
         } else if (state.PlayPauseStop == "showPlayDisabled") {
             $("#controlPlayPauseStop")
             .html(getSVG('play'))
             .attr("onclick", "")
             .addClass("buttonInactive")
             .removeClass("buttonAvailable");
+
+            $(".bar").addClass("noAnim");
         }
     }
 

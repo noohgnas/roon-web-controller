@@ -205,9 +205,19 @@
     vertical-align: middle;
 }
 
+#containerTrackBar {
+   flex: 1;
+}
+
+#containerTrack {
+    display: flex;
+    align-items: flex-end;
+}
+
 #containerTrackSeek {
     height: 5%;
     display:flex;
+    flex-grow: 14;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
@@ -246,7 +256,7 @@
     width: 50%;
     margin: 0;
     line-height: 10px;
-    font-size: 10px;
+    font-size: 20px;
 }
 
 #trackSeekValue span.right {
