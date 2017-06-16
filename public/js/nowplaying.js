@@ -52,6 +52,12 @@ function enableSockets(){
 
         for (var x in payload){
             $("#zoneList").append("<button type=\"button\" class=\"buttonOverlay\" onclick=\"selectZone(\'" + payload[x].zone_id + "\', \'" + payload[x].display_name + "\')\">" + payload[x].display_name + "</button>");
+
+            if (settings.zoneID == payload[x].zone_id) {
+                settings.displayName = payload[x].display_name;
+                setCookie('settings[\'displayName\']', settings.displayName);
+                $(".buttonZoneName").html(settings.displayName);
+            }
         }
     });
 

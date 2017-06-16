@@ -117,6 +117,7 @@ var roon = new RoonApi({
                             }
                         }
                         io.emit("zoneStatus", zoneStatus);
+                        io.emit("zoneList", zoneStatus);
 
                     } else if (i == "zones_added") {
 
