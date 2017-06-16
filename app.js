@@ -96,11 +96,10 @@ var roon = new RoonApi({
         transport.subscribe_zones(function(response, data){
             if (response == "Subscribed") {
                 for ( x in data.zones ) {
-                    var zone_id = data.zones[x].zone_id;
-                    var display_name = data.zones[x].display_name;
-                    item = {};
-                    item.zone_id = zone_id;
-                    item.display_name = display_name;
+                    item = {
+                        zone_id: data.zones[x].zone_id,
+                        display_name: data.zones[x].display_name
+                    };
 
                     zoneList.push(item);
                     zoneStatus.push(data.zones[x])
@@ -124,12 +123,10 @@ var roon = new RoonApi({
                     } else if (i == "zones_added") {
 
                         for ( x in data.zones_added ) {
-                            var zone_id = data.zones_added[x].zone_id;
-                            var display_name = data.zones_added[x].display_name;
-
-                            item = {};
-                            item.zone_id = zone_id;
-                            item.display_name = display_name;
+                            item = {
+                                zone_id: data.zones_added[x].zone_id,
+                                display_name: data.zones_added[x].display_name
+                            };
 
                             zoneList.push(item);
                             zoneStatus.push(data.zones_added[x])
