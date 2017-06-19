@@ -25,7 +25,8 @@ function showSection(sectionName) {
     if (sectionName == "nowPlaying") {
         $("#buttonMenu").show();
         // Show Now Playing screen
-        $("#nowPlaying").show();
+        $("#nowPlaying").slideDown('fast', () => {
+        });
         // Hide inactive sections
         $("#pairDisabled").hide();
         $("#libraryBrowser").hide();
@@ -33,7 +34,8 @@ function showSection(sectionName) {
     } else if (sectionName == "libraryBrowser") {
         $("#buttonMenu").show();
         // Show libraryBrowser
-        $("#libraryBrowser").show();
+        $("#libraryBrowser").slideDown('fast', () => {
+        });
         // Hide inactive sections
         $("#pairDisabled").hide();
         $("#nowPlaying").hide();
