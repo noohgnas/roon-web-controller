@@ -1,4 +1,4 @@
-.headerGroup {
+.navGroup {
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -7,29 +7,31 @@
     vertical-align: middle;
 }
 
-.headerLeft {
+.navLeft {
     justify-content: flex-start;
 }
 
-.headerCenter {
+.navCenter {
     justify-content: center;
 }
 
-.headerRight {
+.navRight {
     justify-content: flex-end;
 }
 
-.headerButton {
+.navButton {
     height: 100%;
     background-color: rgba(0,0,0,0);
     fill-opacity: 1;
     color: #eff0f1;
 }
 
-.itemList {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
+.navButton:disabled {
+    fill-opacity: 0.33;
+}
+
+.hidden {
+    display: none;
 }
 
 .itemListItem {
@@ -46,8 +48,16 @@
   font-size: 30px;
 }
 
-.itemListButton svg {
-    height: 100px;
+.itemListItem:active {
+    transform: translateY(4px);
+    filter:none;
+}
+
+.itemListButton {
+    height: 100%;
+    background-color: #4d4d4d;
+    fill-opacity: 1;
+    color: #eff0f1;
 }
 
 .itemListButton:active {
@@ -55,7 +65,38 @@
     filter:none;
 }
 
-#header {
+.listInfoImage {
+    max-height: 98%;
+    max-width: 98%;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(5px 5px 5px black);
+}
+
+.searchGroup {
+    height: 28px;
+    width: 100%;
+    filter: drop-shadow(5px 5px 5px black);
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.searchForm {
+    height: 100%;
+    width: 80%;
+    border: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+#navLine1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -76,12 +117,32 @@
     right: 20px;
     bottom: 74px;
 }
+#listContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-height: 40%;
+    margin-bottom: 10px;
+}
 
-#footer {
+#listImage {
+    display: flex;
+    justify-content: center;
+    max-width: 49%;
+}
+
+#listInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 49%;
+}
+
+#navLine2 {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 2px;
     height: 40px;
-    border-top: 1px solid blue;
 }
