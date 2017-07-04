@@ -76,10 +76,10 @@
 }
 
 .searchGroup {
-    height: 28px;
+    height: 68px;
     width: 100%;
     filter: drop-shadow(5px 5px 5px black);
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -94,6 +94,7 @@
     border: 0;
     padding: 0;
     font-size: 24px;
+    text-align: center;
 }
 
 #navLine1 {
