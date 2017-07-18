@@ -166,6 +166,13 @@ function showData( payload, zone_id ) {
             }
         }
 
+        $('#searchText').focusin(() => {
+            $('#searchText').attr('placeholder', '');
+        });
+        $('#searchText').focusout(() => {
+            $('#searchText').attr('placeholder', 'Search');
+        });
+
         if (list.level == 0) {
             $("#buttonBack")
                 .prop("disabled", true)
