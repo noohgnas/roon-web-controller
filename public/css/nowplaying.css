@@ -98,16 +98,15 @@
         position: absolute;
         top: 0px;
         bottom: 0px;
-        left: 0px;
-        width: 49%;
+        width: 60%;
     }
 
     #containerMusicInfo {
         position: absolute;
         top: 54px;
         bottom: 0px;
-        right: 0px;
-        width: 49%;
+        right: 10px;
+        width: 38%;
         text-align: left;
     }
 
