@@ -17,7 +17,7 @@
 }
 
 .itemImage {
-    border-radius: 10px;
+    border-radius: 5px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -112,7 +112,7 @@
     }
 
     .itemImage {
-        border-radius: 10px;
+        border-radius: 5px;
         max-width: 98%;
         max-height: 98%;
     }
