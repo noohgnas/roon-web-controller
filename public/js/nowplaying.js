@@ -12,7 +12,9 @@ $(document).ready(function() {
 });
 
 function fixFontSize() {
-    $(".lineMusicInfo").css('font-size', Math.round(parseInt($("#line1").height() * 0.75)));
+    var lineFontSize = Math.round(parseInt($("#line1").height() * 0.75));
+    $(".lineMusicInfo").css('font-size', lineFontSize);
+    $("#line2, #line3").css('font-size', lineFontSize * 0.6);
 
     var zoneFontSize = Math.round(parseInt($("#containerZoneList").height()/3));
         if (zoneFontSize <= 20) {

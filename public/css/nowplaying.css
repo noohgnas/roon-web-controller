@@ -154,9 +154,13 @@
     margin-bottom: 1%;
 }
 
+#line4 {
+    height: 5%;
+}
+
 #controlsPlayer {
     height: 20%;
-    max-height: 96px;
+    max-height: 140px;
     margin-bottom: 5%;
     display:flex;
     justify-content: space-around;
@@ -202,7 +206,7 @@
 
 #trackSeek {
     width: 95%;
-    height: 5px;
+    height: 8px;
     border-radius: 10px;
     background-color: rgba(239, 240, 241, 0.33);
     position: relative;
@@ -212,7 +216,7 @@
 }
 
 #trackSeekValue {
-    height: 5px;
+    height: 8px;
     background-color: #3daee9;
     border-radius: 10px;
     padding: 0;
@@ -221,7 +225,7 @@
 
 #trackSeekValue span {
     position: absolute;
-    bottom: -15px;
+    bottom: -20px;
     width: 50%;
     margin: 0;
     line-height: 10px;
