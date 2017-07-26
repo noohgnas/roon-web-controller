@@ -209,6 +209,8 @@ function showIsPlaying(curZone) {
         } else {
             state.imgUrl = "/roonapi/getImage?image_key=" + curZone.now_playing.image_key;
         }
+        setCookie('state[\'imgUrl\']', state.imgUrl);
+
         $("#containerCoverImage").html("<img src=\"" + state.imgUrl + "\" class=\"itemImage\">");
         $("#coverBackground").css("background-image", "url(" + state.imgUrl + ")");
 

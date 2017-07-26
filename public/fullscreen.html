@@ -25,6 +25,8 @@
     <link rel="manifest" href="/favicons/manifest.json">
     <link rel="stylesheet" type="text/css" href="/css/site.css">
     <script src="/jquery/jquery.min.js"></script>
+    <script src="/js/color-thief.js"></script>
+    <script src="/js-cookie/js.cookie.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/fullscreen.js"></script>
 
@@ -59,11 +61,11 @@
 </head>
 <body>
     <div id="nowPlaying" class="fullscreenFlex">
-        <iframe class="section" src="nowplaying.html"></iframe>
+        <iframe id="nowPlayingFrame" class="section" src="nowplaying.html"></iframe>
     </div>
 
     <div id="libraryBrowser" class="fullscreenFlex">
-        <iframe class="section" src="library.html"></iframe>
+        <iframe id="libraryFrame" class="section" src="library.html"></iframe>
     </div>
 
     <div id="pairDisabled" class="fullscreenFlex">
@@ -76,6 +78,7 @@
             <div class="overlayList">
                 <button type="button" class="buttonOverlay" onclick="showSection('nowPlaying')">Now Playing</button>
                 <button type="button" class="buttonOverlay" onclick="showSection('libraryBrowser')">Library</button>
+                <button type="button" class="buttonOverlay" onclick="$('#overlayTheme').show()">Theme</button>
             </div>
         </div>
     </div>
@@ -83,6 +86,15 @@
     <button type="button" id="buttonMenu" class="buttonTrans" onclick="$('#overlayMainMenu').show()"></button>
 
     <div id="pageLoading" class="fullscreenFlex">&nbsp;</div>
-
+<div id="overlayTheme" class="overlay">
+    <div class="overlayBackground" onclick="$('#overlayTheme').hide()"></div>
+    <div class="overlayContent">
+        <div class="overlayList">
+            <button type="button" class="buttonOverlay" onclick="setTheme('dark')">Dark</button>
+            <button type="button" class="buttonOverlay" onclick="setTheme('color')">Color</button>
+            <button type="button" class="buttonOverlay" onclick="setTheme('cover')">Cover</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
