@@ -15,6 +15,7 @@ function fixFontSize() {
     var lineFontSize = Math.round(parseInt($("#line1").height() * 0.75));
     $(".lineMusicInfo").css('font-size', lineFontSize);
     $("#line2, #line3").css('font-size', lineFontSize * 0.6);
+    $("#line2, #line3").css('line-height', '200%');
 
     var zoneFontSize = Math.round(parseInt($("#containerZoneList").height()/3));
         if (zoneFontSize <= 20) {
