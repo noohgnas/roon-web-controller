@@ -68,17 +68,17 @@
 .listInfoImage {
     max-height: 98%;
     max-width: 98%;
-    border-radius: 10px;
+    border-radius: 5px;
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(5px 5px 5px black);
+    filter: drop-shadow(3px 3px 3px black);
 }
 
 .searchGroup {
     height: 68px;
     width: 100%;
-    filter: drop-shadow(5px 5px 5px black);
+    filter: drop-shadow(3px 3px 3px black);
     margin-bottom: 30px;
     display: flex;
     flex-direction: row;
@@ -95,6 +95,7 @@
     padding: 0;
     font-size: 24px;
     text-align: center;
+    padding-left: 100px;
 }
 
 #navLine1 {
@@ -130,7 +131,7 @@
 #listImage {
     display: flex;
     justify-content: center;
-    max-width: 49%;
+    max-width: 39%;
 }
 
 #listInfo {
@@ -138,7 +139,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 49%;
+    width: 59%;
+}
+
+#listTitle {
+    font-size: 40px;
+    width: 95%;
+    text-align: center;
+}
+
+#listSubtitle {
+    font-size: 25px;
 }
 
 #navLine2 {
@@ -171,12 +182,4 @@
 
 #buttonZoneName {
     font-size: 24px;
-}
-
-#listTitle {
-    font-size: 40px;
-}
-
-#listSubtitle {
-    font-size: 25px;
 }

@@ -131,7 +131,13 @@ function showData( payload, zone_id ) {
     $("#items").html("");
 
     if ( items !== null){
-        $("#listTitle").html(list.title);
+        $("#listTitle")
+        .html(list.title)
+        .simplemarquee({
+            cycles: Infinity,
+            delayBetweenCycles: 5000,
+            handleHover: false
+        });
         $("#listSubtitle").html(list.subtitle);
 
         if (list.image_key) {
