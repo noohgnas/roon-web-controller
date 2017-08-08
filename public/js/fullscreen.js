@@ -59,6 +59,18 @@ function showSection(sectionName) {
     }, 250);
 }
 
+function goPage(pageName) {
+    switch (pageName) {
+        case "eunhasu":
+            $('.overlayContent').hide();
+            // $('.spinner').show();
+            window.location = 'http://11.11.0.6/a/';
+            break;
+        default:
+            break;
+    }
+}
+
 function getSVG(cmd) {
     switch (cmd) {
         case "menu":

@@ -73,12 +73,15 @@
     </div>
 
     <div id="overlayMainMenu" class="overlay">
-        <div class="overlayBackground" onclick="$('#overlayMainMenu').hide()"></div>
+        <div class="overlayBackground" onclick="$('#overlayMainMenu').hide()">
+            <img src="img/cube.svg" class="spinner"
+        </div>
         <div class="overlayContent">
             <div class="overlayList">
                 <button type="button" class="buttonOverlay" onclick="showSection('nowPlaying')">Now Playing</button>
                 <button type="button" class="buttonOverlay" onclick="showSection('libraryBrowser')">Library</button>
                 <button type="button" class="buttonOverlay" onclick="$('#overlayTheme').show()">Theme</button>
+                <button type="button" class="buttonOverlay" onclick="goPage('eunhasu')">Eunhasu</button>
             </div>
         </div>
     </div>
