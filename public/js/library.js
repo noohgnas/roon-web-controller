@@ -179,6 +179,10 @@ function showData( payload, zone_id ) {
             $('#searchText').attr('placeholder', 'Search');
         });
 
+        $('#searchText')
+            .keyboard({ layout: 'qwerty' })
+            .addTyping();
+
         if (list.level == 0) {
             $("#buttonBack")
                 .prop("disabled", true)

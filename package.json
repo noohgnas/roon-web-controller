@@ -19,7 +19,8 @@
     "node-roon-api-image": "roonlabs/node-roon-api-image",
     "node-roon-api-status": "roonlabs/node-roon-api-status",
     "node-roon-api-transport": "roonlabs/node-roon-api-transport",
-    "socket.io": "^1.7.3"
+    "socket.io": "^1.7.3",
+    "virtual-keyboard": "^1.26.26"
   },
   "repository": {
     "type": "git",

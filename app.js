@@ -363,3 +363,14 @@ app.post('/roonapi/goLoadBrowse', function(req, res){
 app.use('/jquery/jquery.min.js', express.static(__dirname + '/node_modules/jquery/dist/jquery.min.js'));
 
 app.use('/js-cookie/js.cookie.js', express.static(__dirname + '/node_modules/js-cookie/src/js.cookie.js'));
+
+app.use('/js/jquery.keyboard.min.js', express.static(__dirname + '/node_modules/virtual-keyboard/dist/js/jquery.keyboard.min.js'));
+
+app.use('/js/jquery.keyboard.extension-typing.min.js', express.static(__dirname + '/node_modules/virtual-keyboard/dist/js/jquery.keyboard.extension-typing.min.js'));
+
+app.use('/js/jquery.keyboard.extension-caret.min.js', express.static(__dirname + '/node_modules/virtual-keyboard/dist/js/jquery.keyboard.extension-caret.min.js'));
+
+app.use('/js/jquery.keyboard.extension-autocomplete.min.js', express.static(__dirname + '/node_modules/virtual-keyboard/dist/js/jquery.keyboard.extension-autocomplete.min.js'));
+
+app.use('/css/keyboard.min.css', express.static(__dirname + '/node_modules/virtual-keyboard/dist/css/keyboard.min.css'));
+
