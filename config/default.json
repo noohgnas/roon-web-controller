@@ -1,5 +1,10 @@
 {
   "server": {
     "port": "8080"
+  },
+  "profile": {
+    "model": "T-1000",
+    "email": "sotm@sotm-audio.com",
+    "website": "http://sotm-audio.com/"
   }
 }

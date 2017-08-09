@@ -11,6 +11,7 @@
     "command-line-usage": "^4.0.0",
     "config": "^1.26.1",
     "express": "4.x",
+    "getmac": "^1.2.1",
     "jquery": "^3.2.1",
     "js-cookie": "^2.1.4",
     "node-roon-api": "roonlabs/node-roon-api",

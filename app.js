@@ -37,6 +37,12 @@ if (options.help) {
     process.exit();
 }
 
+var mac = '00:00:00:00:00:00';
+require('getmac').getMac((err, macAddress) => {
+    if (err)  throw err;
+    mac = macAddress;
+});
+
 // Read config file
 var config = require('config');
 
@@ -49,6 +55,26 @@ if (options.port) {
     var listenPort = configPort;
 } else {
     var listenPort = defaultListenPort;
+}
+
+var configProfile = {
+    model: "T-1000",
+    email: "sotm@sotm-audio.com",
+    website: "http://www.sotm-audio.com/"
+};
+var configModel = config.get('profile.model');
+if (configModel) {
+    configProfile.model = configModel + ' ' + mac;
+}
+
+var configEmail = config.get('profile.email');
+if (configEmail) {
+    configProfile.email = configEmail;
+}
+
+var configWebsite = config.get('profile.website');
+if (configWebsite) {
+    configProfile.website = configWebsite;
 }
 
 // Setup Express
@@ -85,9 +111,9 @@ var roon = new RoonApi({
     extension_id:        'com.pluggemi.web.controller',
     display_name:        "Web Controller",
     display_version:     "1.2.0",
-    publisher:           'Mike Plugge',
-    email:               'masked',
-    website:             'https://github.com/pluggemi/roon-web-controller',
+    publisher:           configProfile.model,
+    email:               configProfile.email,
+    website:             configProfile.website,
 
     core_paired: function(core_) {
         core = core_;
