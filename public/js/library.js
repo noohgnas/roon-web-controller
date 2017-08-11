@@ -180,7 +180,7 @@ function showData( payload, zone_id ) {
         });
 
         $('#searchText')
-            .keyboard({ layout: 'qwerty' })
+            .keyboard({ layout: 'international' })
             .addTyping();
 
         if (list.level == 0) {

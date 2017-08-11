@@ -4,7 +4,7 @@
   text-align: center;
   padding: .1em;
   position: absolute;
-  left: 0.6em;
+  left: 2em;
   top: 8em;
   z-index: 16000;
   /* see issue #484 */
@@ -21,8 +21,8 @@
 }
 
 .ui-keyboard-button {
-  height: 7.5em;
-  min-width: 6em;
+  height: 5em;
+  min-width: 3.5em;
   margin: .3em;
   cursor: pointer;
   overflow: hidden;
@@ -67,7 +67,9 @@
 /* width is calculated in IE, since 99% = 99% full browser width =( */
 
 .ui-keyboard-preview {
-  text-align: left;
+  background: #ffffff;
+  color: #000;
+  font-size: 2.5em !important;
   margin: 0 0 3px 0;
   display: inline;
   width: 99%;
@@ -79,7 +81,7 @@
 }
 
 .ui-keyboard-input {
-  text-align: left;
+  background: #ffffff;
 }
 
 .ui-keyboard-input-current {
