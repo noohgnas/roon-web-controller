@@ -4,7 +4,7 @@
   text-align: center;
   padding: .1em;
   position: absolute;
-  left: 2em;
+  left: 3em;
   top: 8em;
   z-index: 16000;
   /* see issue #484 */
@@ -35,7 +35,8 @@
   margin: 0;
   white-space: nowrap;
   display: inline-block;
-  font-size: 2.5em
+  font-size: 2.5em;
+  font-weight: normal;
 }
 
 .ui-keyboard-button-endrow {
@@ -73,6 +74,7 @@
   margin: 0 0 3px 0;
   display: inline;
   width: 99%;
+  padding-left: 0px;
 }
 
 .ui-keyboard-keyset {
