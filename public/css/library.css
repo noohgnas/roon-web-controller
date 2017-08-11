@@ -34,6 +34,24 @@
     display: none;
 }
 
+.itemAlbumItem {
+  background-color: #4d4d4d;
+  fill-opacity: 1;
+  color: #eff0f1;
+  width: 10em;
+  height: 10em;
+  margin: 0.3em;
+  filter: drop-shadow(5px 5px 5px black);
+  padding: 20px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .itemListItem {
   background-color: #4d4d4d;
   fill-opacity: 1;
@@ -75,6 +93,14 @@
     filter: drop-shadow(3px 3px 3px black);
 }
 
+.listAlbumImage {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
 .searchGroup {
     height: 68px;
     width: 100%;

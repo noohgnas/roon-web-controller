@@ -159,15 +159,34 @@ function showData( payload, zone_id ) {
 
                 $("#items").append(html);
             } else {
-                html += "<button type=\"button\" class=\"itemListItem\" onclick=\"goList(\'" + items[x].item_key + "\')\">";
-                html += items[x].title;
-                if (items[x].subtitle === null || items[x].subtitle == "") {
-                } else {
-                    html += "<br><span class=\"textSmall\">(" + items[x].subtitle + ")</span>";
-                }
-                html += "</button>";
-                html += "</form>";
 
+                if (list.title == "Albums" || list.title == "Artists") {
+                    $("#items").css("display", "flex").css("flex-wrap", "wrap");
+
+                    if (list.title == "Artists") {
+                        $(".itemAlbumItem").css("height", "8em");
+                        $(".itemAlbumItem").css("max-height", "8em");
+                    }
+
+                    html += "<button type=\"button\" class=\"itemAlbumItem\" onclick=\"goList(\'" + items[x].item_key + "\')\">";
+                    // html += items[x].title;
+                    if (items[x].image_key === null || items[x].image_key == "") {
+                        html += "<img class=\"listAlbumImage\" src=\"/img/eighth_note.png\">";
+                    } else {
+                        html += "<img class=\"listAlbumImage\" src=\"/roonapi/getImage?image_key=" + items[x].image_key + "\">";
+                    }
+                    html += "</button>";
+
+                } else {
+                    html += "<button type=\"button\" class=\"itemListItem\" onclick=\"goList(\'" + items[x].item_key + "\')\">";
+                    html += items[x].title;
+                    if (items[x].subtitle === null || items[x].subtitle == "") {
+                    } else {
+                        html += "<br><span class=\"textSmall\">(" + items[x].subtitle + ")</span>";
+                    }
+                    html += "</button>";
+                }
+                html += "</form>";
                 $("#items").append(html);
             }
         }
