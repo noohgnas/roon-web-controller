@@ -6,8 +6,8 @@ After=network.target
 
 [Service]
 User=sotm
-WorkingDirectory=/home/sotm/roon-web-controller
-ExecStart=/usr/local/bin/node app.js
+WorkingDirectory=/opt/sotm/roon-web-controller
+ExecStart=/usr/bin/node app.js
 Restart=always
 RestartSec=3
 
