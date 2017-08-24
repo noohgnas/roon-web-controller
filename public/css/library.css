@@ -39,7 +39,8 @@
   fill-opacity: 1;
   color: #eff0f1;
   width: 10em;
-  height: 10em;
+  height: 11em;
+  max-height: 11em;
   margin: 0.3em;
   filter: drop-shadow(5px 5px 5px black);
   padding: 20px;

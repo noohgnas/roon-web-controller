@@ -171,9 +171,19 @@ function showData( payload, zone_id ) {
                     html += "<button type=\"button\" class=\"itemAlbumItem\" onclick=\"goList(\'" + items[x].item_key + "\')\">";
                     // html += items[x].title;
                     if (items[x].image_key === null || items[x].image_key == "") {
-                        html += "<img class=\"listAlbumImage\" src=\"/img/eighth_note.png\">";
+                        if (list.title == "Albums") {
+                            html += "<img class=\"listAlbumImage\" src=\"/img/eighth_note.png\" style=\"height: 260px;\">";
+                        } else {
+                            html += "<img class=\"listAlbumImage\" src=\"/img/eighth_note2.png\">";
+                        }
                     } else {
-                        html += "<img class=\"listAlbumImage\" src=\"/roonapi/getImage?image_key=" + items[x].image_key + "\">";
+                        html += "<img class=\"listAlbumImage\" src=\"/roonapi/getImage?image_key=" + items[x].image_key + "\" style=\"max-height: 260px;\">";
+                    }
+
+                    if (items[x].title === null || items[x].title === "") {
+                        html += "<br><span class=\"textSmall\">Unknown</span>";
+                    } else {
+                        html += "<br><span class=\"textSmall\">" + items[x].title + "</span>";
                     }
                     html += "</button>";
 
