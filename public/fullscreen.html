@@ -57,6 +57,18 @@
             border: none;
             border-radius: 0 0 0 5px;
         }
+
+        #quickLink {
+            position: absolute;
+            background-color: rgba(0,0,0,0.33);
+            color: #eff0f1;
+            top: 0;
+            right: 100px;
+            height: 74px;
+            z-index: 100;
+            border: none;
+            border-radius: 0 0 0 5px;
+        }
     </style>
 </head>
 <body>
@@ -87,6 +99,8 @@
     </div>
 
     <button type="button" id="buttonMenu" class="buttonTrans" onclick="$('#overlayMainMenu').show()"></button>
+
+    <button type="button" id="quickLink" class="buttonTransLink" data-move-to="libraryBrowser" onclick="moveToLink($(this))"></button>
 
     <div id="pageLoading" class="fullscreenFlex">&nbsp;</div>
 <div id="overlayTheme" class="overlay">
