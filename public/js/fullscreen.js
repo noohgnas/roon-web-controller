@@ -44,6 +44,7 @@ function showSection(sectionName) {
     switch (sectionName) {
         case "nowPlaying":
         $("#buttonMenu").show();
+        $("#quickLink").show();
         // Show Now Playing screen
         $("#nowPlaying").slideDown('fast', () => {
         });
@@ -54,6 +55,7 @@ function showSection(sectionName) {
             break;
         case "libraryBrowser":
         $("#buttonMenu").show();
+        $("#quickLink").show();
         // Show libraryBrowser
         $("#libraryBrowser").slideDown('fast', () => {
         });
@@ -67,6 +69,7 @@ function showSection(sectionName) {
         $("#pairDisabled").show();
         // Hide everthing else
         $("#buttonMenu").hide();
+        $("#quickLink").hide();
         $("#libraryBrowser").hide();
         $("#nowPlaying").hide();
             $("#pageLoading").hide();
